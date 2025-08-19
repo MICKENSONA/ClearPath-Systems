@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking - ClearPath Systems</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    tailwind.config = { theme: { extend: { colors: { brand: '#3D3A29' } } } }
+  </script>
+</head>
+<body class="font-sans text-gray-800">
+  <nav class="bg-brand text-white px-6 py-4 flex justify-between items-center">
+    <a href="index.html" class="text-2xl font-bold">ClearPath Systems</a>
+    <div class="md:hidden">
+      <button id="menu-btn" class="focus:outline-none">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    <div id="menu" class="hidden md:flex space-x-6">
+      <a href="about.html" class="hover:underline">About</a>
+      <a href="services.html" class="hover:underline">Services</a>
+      <a href="how.html" class="hover:underline">How It Works</a>
+      <a href="booking.html" class="hover:underline">Booking</a>
+      <a href="contact.html" class="hover:underline">Contact</a>
+    </div>
+  </nav>
+
+  <section class="px-6 py-16 max-w-3xl mx-auto text-center">
+    <h2 class="text-3xl font-bold text-brand mb-6">Book a Consultation</h2>
+    <p class="mb-4">Schedule a 30-minute consultation via Calendly:</p>
+    <a href="https://calendly.com/roselittle-consult/30min" target="_blank" class="bg-brand text-white px-6 py-3 rounded-xl shadow hover:bg-brand/90">Book Now</a>
+  </section>
+    <h1 class="text-4xl md:text-6xl font-bold">Clarity. Precision. Automation.</h1>
+    <p class="mt-4 text-xl md:text-2xl">Streamline your business with ClearPath Systems</p>
+    <a href="booking.html" class="mt-8 bg-white text-brand px-6 py-3 rounded-xl font-semibold shadow hover:bg-gray-100">Book a Consultation</a>
+  </section>
+
+  <footer class="bg-brand text-white py-6 text-center">
+    <p>&copy; 2025 ClearPath Systems. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('menu');
+    btn.addEventListener('click', () => { menu.classList.toggle('hidden'); });
+  </script>
+</body>
+</html>
