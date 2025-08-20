@@ -2,88 +2,90 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home - ClearPath Systems</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ClearPath Systems</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="styles.css" />
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          colors: {
-            brand: '#3D3A29',
-          },
-        },
-      },
-    };
+          colors: { brand: '#3D3A29' }
+        }
+      }
+    }
   </script>
 </head>
 <body class="font-sans text-gray-800">
 
   <!-- Navbar -->
   <nav class="bg-brand text-white px-6 py-4 flex justify-between items-center relative z-50">
-  <a href="index.html" class="text-2xl font-bold">ClearPath Systems</a>
+    <a href="index.html" class="text-2xl font-bold">ClearPath Systems</a>
 
-  <!-- Hamburger button (mobile) -->
-  <div class="md:hidden">
-    <button id="menu-btn" class="focus:outline-none">
+    <!-- Hamburger (mobile) -->
+    <button id="menu-btn" class="md:hidden focus:outline-none">
       <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16" />
+          d="M4 6h16M4 12h16M4 18h16" />
       </svg>
     </button>
-  </div>
 
-  <!-- Desktop Menu -->
-  <div class="hidden md:flex space-x-6">
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex space-x-6">
+      <a href="about.html" class="hover:underline">About</a>
+      <a href="services.html" class="hover:underline">Services</a>
+      <a href="how.html" class="hover:underline">How It Works</a>
+      <a href="booking.html" class="hover:underline">Booking</a>
+      <a href="contact.html" class="hover:underline">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Mobile Sidebar -->
+  <aside id="mobile-menu" 
+    class="fixed top-0 right-0 h-full w-64 bg-brand text-white transform translate-x-full transition-transform duration-300 ease-in-out z-50 flex flex-col p-6 space-y-6 shadow-lg md:hidden">
+    <div class="flex justify-between items-center mb-6">
+      <span class="text-lg font-semibold">Menu</span>
+      <button id="close-menu" class="text-white text-3xl font-bold focus:outline-none">&times;</button>
+    </div>
     <a href="about.html" class="hover:underline">About</a>
     <a href="services.html" class="hover:underline">Services</a>
     <a href="how.html" class="hover:underline">How It Works</a>
     <a href="booking.html" class="hover:underline">Booking</a>
     <a href="contact.html" class="hover:underline">Contact</a>
-  </div>
-</nav>
+  </aside>
 
-<!-- Mobile Sidebar Menu -->
-<div id="mobile-menu"
-     class="fixed top-0 right-0 h-full w-64 bg-brand text-white transform translate-x-full transition-transform duration-300 ease-in-out z-40 md:hidden flex flex-col p-6 space-y-6 shadow-lg">
-  <div class="flex justify-between items-center mb-4">
-    <span class="text-lg font-semibold">Menu</span>
-    <button id="close-menu" class="text-white text-2xl">&times;</button>
-  </div>
-  <a href="about.html" class="hover:underline">About</a>
-  <a href="services.html" class="hover:underline">Services</a>
-  <a href="how.html" class="hover:underline">How It Works</a>
-  <a href="booking.html" class="hover:underline">Booking</a>
-  <a href="contact.html" class="hover:underline">Contact</a>
-</div>
-
-  <!-- Hero Section -->
+  <!-- Your page content here -->
   <section class="bg-brand text-white min-h-screen flex flex-col justify-center items-center text-center px-6">
     <h1 class="text-4xl md:text-6xl font-bold">Clarity. Precision. Automation.</h1>
     <p class="mt-4 text-xl md:text-2xl">Streamline your business with ClearPath Systems</p>
-    <a href="booking.html"
-      class="mt-8 bg-white text-brand px-6 py-3 rounded-xl font-semibold shadow hover:bg-gray-100">Book a Consultation</a>
+    <a href="booking.html" class="mt-8 bg-white text-brand px-6 py-3 rounded-xl font-semibold shadow hover:bg-gray-100">
+      Book a Consultation
+    </a>
   </section>
 
-  <!-- Footer -->
   <footer class="bg-brand text-white py-6 text-center">
     <p>&copy; 2025 ClearPath Systems. All rights reserved.</p>
   </footer>
 
-  <!-- JavaScript for Mobile Menu -->
- <script>
-  const menuBtn = document.getElementById('menu-btn');
-  const closeBtn = document.getElementById('close-menu');
-  const mobileMenu = document.getElementById('mobile-menu');
+  <!-- Script to toggle sidebar -->
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const closeBtn = document.getElementById('close-menu');
+    const mobileMenu = document.getElementById('mobile-menu');
 
-  menuBtn.addEventListener('click', () => {
-    mobileMenu.classList.remove('translate-x-full');
-  });
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.remove('translate-x-full');
+    });
 
-  closeBtn.addEventListener('click', () => {
-    mobileMenu.classList.add('translate-x-full');
-  });
-</script>
+    closeBtn.addEventListener('click', () => {
+      mobileMenu.classList.add('translate-x-full');
+    });
+
+    // Optional: Close sidebar when clicking outside it
+    document.addEventListener('click', (e) => {
+      if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+        mobileMenu.classList.add('translate-x-full');
+      }
+    });
+  </script>
 </body>
 </html>
