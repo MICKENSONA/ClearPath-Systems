@@ -20,33 +20,13 @@
         </svg>
       </button>
     </div>
-    <!-- Mobile Navigation -->
-<div class="sm:hidden fixed top-0 left-0 h-full w-64 bg-gray-800 text-white p-6 transform -translate-x-full transition-transform duration-300" id="mobile-menu">
-  <h2 class="text-2xl font-bold mb-6">ClearPath Systems</h2>
-  <nav class="flex flex-col space-y-4">
-    <a href="#about" class="hover:text-blue-400">About</a>
-    <a href="#works" class="hover:text-blue-400">Works</a>
-    <a href="#services" class="hover:text-blue-400">Services</a>
-    <a href="#booking" class="hover:text-blue-400">Booking</a>
-    <a href="#contact" class="hover:text-blue-400">Contact</a>
-  </nav>
-</div>
-
-<!-- Hamburger Button -->
-<button id="menu-btn" class="sm:hidden fixed top-4 left-4 z-50 text-white">
-  <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-  </svg>
-</button>
-
-<script>
-  const btn = document.getElementById('menu-btn');
-  const menu = document.getElementById('mobile-menu');
-
-  btn.addEventListener('click', () => {
-    menu.classList.toggle('-translate-x-full'); // Show/hide sidebar
-  });
-</script>
+    <div id="menu" class="hidden md:flex space-x-6">
+      <a href="about.html" class="hover:underline">About</a>
+      <a href="services.html" class="hover:underline">Services</a>
+      <a href="how.html" class="hover:underline">How It Works</a>
+      <a href="booking.html" class="hover:underline">Booking</a>
+      <a href="contact.html" class="hover:underline">Contact</a>
+    </div>
   </nav>
 
   <section class="bg-brand text-white min-h-screen flex flex-col justify-center items-center text-center px-6">
